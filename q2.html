@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>우리 아이를 찾아주세요</title>
+<!--일단 뼈대만 구축-->
+<style>
+body{margin: 0;}
+html{font-size: 16px;}
+.quiz_box{width: 80vw; height: 45vh;
+position: absolute;
+left:50%; top:60vh;
+/* background: blue;*/
+padding:10px;
+text-align: center;
+transform: translate(-50%, -50%);}
+.q, .answer{font-size: 1.5rem;}
+.answer{padding: 10px; background: #0032ff; color:white; margin: 15px;
+border-radius: 5px;}
+.answer:hover{background: #FF00F5;color:black;cursor:pointer;}
+
+.q1_background img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+
+.q1{position: relative;
+	text-align: center;
+	top: 180px;
+	font-size: 2rem;
+	font-family: 'LOTTERIADDAG';}
+
+
+
+@font-face {
+    font-family: 'LOTTERIADDAG';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/LOTTERIADDAG.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;}
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@800&family=Noto+Sans+KR:wght@300&display=swap');    	
+</style>
+</head>
+
+<body>
+<div class="q1_background">
+<img src="q1_background.png">
+</div>
+
+<div class="quiz">
+<div class="q1">Q1.기차에 몸을 실은 당신,<br> 
+돌을 갓 지나보이는 아기의 울음소리가 시끄럽게 들린다. 여기서 당신이 드는 생각은?</div>
+<div class="quiz_box">
+<div class="answer" id="a">부모가 아기를 데리고 나갔으면 좋겠다.</div>
+<div class="answer" id="b">아기를 데리고 왜 여행을 오는지 모르겠다.</div>
+<div class="answer" id='c'>다같이 쓰는 공용공간에서 민폐라고 생각한다.</div>
+<div class="answer" id="d">활기찬 아기라고 생각하며 귀여워한다.</div>
+</div>
+</div>
+
+<script type="text/javascript">
+
+sessionStorage.setItem('mark',0);
+//sessionStorage를 통해 데이터 저장, 공유할 수 있다
+
+a.onclick = function(){
+let m = sessionStorage.getItem('mark');
+m = parseInt(m) + 50; //함수화 하기 위해 parseInt 사
+sessionStorage.setItem('mark',m);
+
+window.location = "q3.html";
+}
+b.onclick = function(){
+let m = sessionStorage.getItem('mark');
+m = parseInt(m) + 50; //함수화 하기 위해 parseInt 사
+sessionStorage.setItem('mark',m);
+window.location = "q3.html";
+}
+c.onclick = function(){
+let m = sessionStorage.getItem('mark');
+m = parseInt(m) + 50; //함수화 하기 위해 parseInt 사
+sessionStorage.setItem('mark',m);
+window.location = "q3.html";
+}
+d.onclick = function(){
+let m = sessionStorage.getItem('mark');
+m = parseInt(m) + 50; //함수화 하기 위해 parseInt 사
+sessionStorage.setItem('mark',m);
+window.location = "q3.html";
+}
+
+</script>
+
+</body>
+</html>

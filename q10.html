@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>우리 아이를 찾아주세요</title>
+<!--일단 뼈대만 구축-->
+<style>
+body{
+
+    margin: 0;
+    opacity: 0;
+    transition: opacity 1s;}
+
+    body.loaded {
+  opacity: 1; /* 페이지가 보이도록 설정 */
+                }	
+
+.q1_background img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.main{width: 100vw; top:10vh;
+position: relative;
+text-align: center;
+text-shadow: -1.5px 0 black, 0 3.5px 2px black, 1.5px 0 black, 0 -1.5px black;
+}
+
+.m{font-size: 5rem;
+	font-family: 'LOTTERIADDAG';
+  color: white;}
+
+.ma{font-size: 1.7rem;
+	color: #FF00D6;
+	font-weight: 800;
+ }
+.na,.cha{font-size: 24px;}
+
+ .q10_image{position: relative; text-align: center; z-index: 1;
+ 			top: 140px;}
+
+.background_image img {
+    position: relative;
+    width: 100%;
+    height: 100%;
+   z-index: 1;
+}
+.answer{position: relative; text-align: center; z-index: 1;
+        font-size: 1.7rem;
+        top: 170px;}
+.answer_2{font-size:2rem;
+            position: relative; color: #FF00D6; font-weight: 800;}
+
+ .na{position: relative; text-align: center;
+ 	font-family: 'Nanum Myeongjo', serif;
+    font-size: 1rem;
+ 	font-weight: 800;
+ 	top: 210px;
+	z-index: 1;}
+ .hover{position: relative; text-align: center; top: 250px; left: 50%;
+    transform: translate(-50%, -50%);
+        font-size: 1.5rem;
+ 		background: #00FF57;
+ 		border: none;
+ 		padding: 20px;
+ 		border-radius: 50px;
+ 		z-index: 1;
+ 		cursor: pointer;}
+
+.hover:hover {background: #FF00D6;}
+
+.show_hover{display: none;}
+.hover:hover .show_hover{display: block;}
+.hover:hover .hidden_hover{display: none;}
+
+
+@font-face {
+    font-family: 'LOTTERIADDAG';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/LOTTERIADDAG.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;}
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@800&family=Noto+Sans+KR:wght@300&display=swap');    	
+</style>
+</head>
+
+<body onclick="playSound()">
+
+<div class="main">
+<div class="m">우리 아이를 찾아주세요!</div>
+<div class="ma">당신이 원하는 아이를 찾아드리는 고품격 서비스
+</div>
+</div>
+
+<div class="q10_image">
+	<img src="q10_image.png">
+</div>
+
+<div class="q1_background">
+<img src="q1_background.png">
+</div>
+
+
+<div class="answer">
+    당신의 아이는 어떠한 상황에서도<br>
+<div class="answer_2"><울지 않고>, <암전하며>, <똑똑하고>, <경제 능력이 뛰어난>,
+ <최고의 유형></div>입니다!
+    </div>
+
+<div class="na">
+마음에 들지 않는다.
+</div>
+
+<a href="index.html"><button type="button" class="hover">
+<div class="hidden_hover">REPLAY</div>
+<div class="show_hover">과연 ?</div>
+</button></a>
+
+<audio id="clickSound">
+  <source src="mouse.m4a" type="audio/mp4">
+</audio>
+
+<script type="text/javascript">
+     window.onload = function() {
+    document.body.classList.add('loaded');
+  };
+    const sound = document.getElementById('clickSound');
+  const button = document.querySelector('.hover');
+
+  button.addEventListener('click', function(event) {
+    event.preventDefault(); // 기본 동작 중단
+    sound.currentTime = 0; // 소리를 처음부터 재생
+    sound.play(); // 소리 재생
+
+    // 페이지 이동
+    setTimeout(function() {
+      window.location.href = button.parentElement.href;
+    }, sound.duration * 1000); // 소리 재생 시간만큼 대기 후 페이지 이동
+  });
+
+</script>
+
+</body>
+</html>

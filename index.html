@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>우리 아이를 찾아주세요</title>
+<style>
+body{margin: 0;}	
+html{height: 100%; width: 100vw;
+	margin: 0;
+	text-align: center;
+	position: absolute;}
+	.box{position: absolute; width: 100vw; height: 100%; background: linear-gradient(#0032ff,#FFFF); margin: 0;}
+.main{width: 100vw; top:39vh;
+position: absolute;
+text-align: center;
+text-shadow: -1.5px 0 black, 0 3.5px 2px black, 1.5px 0 black, 0 -1.5px black;
+}
+
+.m{font-size: 5rem;
+	font-family: 'LOTTERIADDAG';
+  color: white;}
+
+.ma{font-size: 1.7rem;
+	color: #00FF57;
+	font-weight: 800;
+ }
+ .arrow{position: relative; text-align: center; top: 747px;}
+ .arrow_2{position: relative; text-align: center; top: 1780px;}
+ .arrow_3{position: relative; text-align: center; top: 2450px;}
+ .p1,.sm,.na,.cha{font-size: 24px;}
+ .p1{position: absolute;  width: 100vw;
+ 	top: 100vh;
+ 	line-height: 200px;
+ 	}
+ .green{font-size: 36px;font-weight: 700;
+ 		background: #00FF57;
+ 		border-width: 50px;
+ 	padding: 20px;
+ 	border-radius: 50px;
+ 	position: absolute;  width: 50vw;
+ 		top: 200vh; left: 24%;}
+ .sm{position: absolute;  width: 100vw;
+ 	top: 230vh;
+ 	line-height: 40px;}
+ .na{position: absolute;  width: 100vw;
+ 	font-family: 'Nanum Myeongjo', serif;
+ 	font-weight: 800;
+ 	top: 267.5vh;}
+ .hover{position: absolute; top: 275vh; width: 10vw;
+		left: 50%;
+    	transform: translate(-50%, -50%);
+        font-size: 1.5rem;
+ 		background: #00FF57;
+ 		border: none;
+ 		padding: 20px;
+ 		border-radius: 50px;
+ 		z-index: 1;
+ 		cursor: pointer;}
+ .hover:hover {background: #FF00D6;}
+ .show_hover{display: none;}
+.hover:hover .show_hover{display: block;}
+.hover:hover .hidden_hover{display: none;}
+
+ .footer{position: absolute; top: 273.5vh;
+ 		width: 100vw; height: 250px;
+ 		background: linear-gradient(#FFFF,#0032ff);
+ 		}
+@font-face {
+    font-family: 'LOTTERIADDAG';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/LOTTERIADDAG.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;}
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@200;300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@800&family=Noto+Sans+KR:wght@300&display=swap');    	
+</style>
+</head>
+
+<body onclick="playSound()">
+<div class="box"></div>
+<div class="main">
+<div class="m">우리 아이를 찾아주세요!</div>
+<div class="ma">당신이 원하는 아이를 찾아드리는 고품격 서비스
+</div>
+</div>
+
+<div class="arrow">
+	<img src="arroww.png">
+</div>
+
+<div class="p1">
+<p>
+“우리 아이가 말을 듣지 않나요?”<br>
+“기대와는 다르게 성적이 좋지 않나요?”<br>
+“또래와 비교했을 때 성장이 더디나요?”<br>
+“나의 아이가 마음에 들지 않나요?”
+</p>
+</div>
+
+<div class="arrow_2">
+	<img src="arroww.png">
+</div>
+
+<div class="green">
+이 지구 상에 "당신의 아이"가 될 인구는 많습니다!
+</div>
+
+<div class="sm">
+생명과학이 발전한 2023년,<br>
+대한민국은 드디어 고객님의 성향과 부합하는 아이를 추천하고,<br>
+이를 기반으로 입양까지 한 번에 해결할 수 있는<br>
+<br>
+고객 맞춤형 아이 추천 서비스를 제공할 수 있게 되었습니다.
+	</div>
+
+<div class="arrow_3">
+	<img src="arroww.png">
+</div>
+s
+<div class="na">
+나에게 적합한 아이를
+</div>
+
+<a href="q1.html"><button type="button" class="hover">
+<div class="hidden_hover">찾아본다</div>
+<div class="show_hover">찾아본다</div>
+</button></a>
+
+<div class="footer">
+</div>
+
+<audio id="clickSound">
+  <source src="mouse.m4a" type="audio/mp4">
+</audio>
+
+<script type="text/javascript">
+  const sound = document.getElementById('clickSound');
+  const button = document.querySelector('.hover');
+
+  button.addEventListener('click', function(event) {
+    event.preventDefault(); // 기본 동작 중단
+    sound.currentTime = 0; // 소리를 처음부터 재생
+    sound.play(); // 소리 재생
+
+    // 페이지 이동
+    setTimeout(function() {
+      window.location.href = button.parentElement.href;
+    }, sound.duration * 1000); // 소리 재생 시간만큼 대기 후 페이지 이동
+  });
+</script>
+
+
+</body>
+</html>

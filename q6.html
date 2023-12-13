@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>우리 아이를 찾아주세요</title>
+<!--일단 뼈대만 구축-->
+<style>
+body{margin: 0;}
+html{font-size: 16px;}
+.quiz_box{width: 80vw; height: 45vh;
+position: absolute;
+left:50%; top:60vh;
+/* background: blue;*/
+padding:10px;
+text-align: center;
+transform: translate(-50%, -50%);}
+.q, .answer{font-size: 1.5rem;}
+.answer{padding: 10px; background: #0032ff; color:white; margin: 15px;
+border-radius: 5px;}
+.answer:hover{background: #FF00F5;color:black;cursor:pointer;}
+
+.q1_background img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.q1{position: relative;
+	text-align: center;
+	top: 180px;
+	font-size: 2rem;
+	font-family: 'LOTTERIADDAG';}
+
+
+
+@font-face {
+    font-family: 'LOTTERIADDAG';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/LOTTERIADDAG.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;}
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@800&family=Noto+Sans+KR:wght@300&display=swap');    	
+</style>
+</head>
+
+<body>
+<div class="q1_background">
+<img src="q1_background.png">
+</div>
+
+<div class="quiz">
+<div class="q1">Q5. 유행에 민감해질 시기, 요즘 XXX만원대 패딩이 유행한다고 한다,<br>
+여기서 당신이 원하는 아이의 멘트는?</div>
+<div class="quiz_box">
+<div class="answer" id="a">"다른 애들도 다 입는데 나만 없어요”</div>
+<div class="answer" id="b">"저만 없어서 왕따 당하는 거 같아요. 너무해요!”</div>
+<div class="answer" id='c'>“공부 안 하고 제가 돈 벌어서 살게요."</div>
+<div class="answer" id='d'>“그런 거 필요 없고 공부 열심히 할게요.”</div>
+</div>
+</div>
+
+<script type="text/javascript">
+
+sessionStorage.setItem('mark',0);
+//sessionStorage를 통해 데이터 저장, 공유할 수 있다
+
+a.onclick = function(){
+let m = sessionStorage.getItem('mark');
+m = parseInt(m) + 50; //함수화 하기 위해 parseInt 사
+sessionStorage.setItem('mark',1);
+alert('남들과 비교하는 내 아이?');
+    return false;
+
+}
+  document.getElementById('b').onclick = function() {
+    let m = sessionStorage.getItem('mark');
+    m = parseInt(m) + 50;
+    sessionStorage.setItem('mark', m);
+
+    alert('낮은 자존감을 가진 내 아이!');
+    return false;
+  }
+c.onclick = function(){
+let m = sessionStorage.getItem('mark');
+m = parseInt(m) + 50; //함수화 하기 위해 parseInt 사
+sessionStorage.setItem('mark',3);
+window.location = "q7.html";
+}
+d.onclick = function(){
+let m = sessionStorage.getItem('mark');
+m = parseInt(m) + 50; //함수화 하기 위해 parseInt 사
+sessionStorage.setItem('mark',3);
+window.location = "q7.html";
+}
+
+
+</script>
+
+</body>
+</html>
